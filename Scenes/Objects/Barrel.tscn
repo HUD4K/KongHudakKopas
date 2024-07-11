@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://db87ny22mv8km"]
+
+[ext_resource type="Script" path="res://Scipts/Killable/Barrel.gd" id="1_eeftg"]
+[ext_resource type="Texture2D" uid="uid://c0rh4lqxli7j7" path="res://Assets/Sprites/barrel.png" id="2_30gab"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfsmp"]
+radius = 9.25
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twdth"]
+radius = 16.25
+
+[node name="Barrel" type="RigidBody2D"]
+gravity_scale = 20.0
+linear_velocity = Vector2(300, 0)
+script = ExtResource("1_eeftg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(259.5, 95)
+scale = Vector2(1.76923, 2.18182)
+texture = ExtResource("2_30gab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(259.75, 95)
+shape = SubResource("CircleShape2D_qfsmp")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(259.75, 95)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_twdth")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

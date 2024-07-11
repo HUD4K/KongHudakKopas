@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmycxprgx8jwn"]
+
+[sub_resource type="GDScript" id="GDScript_wy0c8"]
+script/source = "extends Label
+
+
+func _process(_delta):
+	self.text = \"Lives - \" + Global.lives + \"
+	Level - \" + Global.level +\" 
+	Score - \" + Global.score
+"
+
+[node name="HUD" type="Label"]
+offset_right = 82.0
+offset_bottom = 78.0
+script = SubResource("GDScript_wy0c8")

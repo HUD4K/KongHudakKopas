@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd6urq6ct2v4f"]
+
+[ext_resource type="Script" path="res://Scipts/UI/MainMenu.gd" id="1_acavd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5e088"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrtjq"]
+font_size = 80
+font_color = Color(0.65098, 0.00392157, 0.94902, 1)
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_acavd")
+
+[node name="Artworks-000478547124-9h19o0-t500x500" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(577, 326.5)
+scale = Vector2(2.296, 1.298)
+texture = SubResource("CompressedTexture2D_5e088")
+
+[node name="25m button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 416.0
+offset_top = 313.0
+offset_right = 595.0
+offset_bottom = 356.0
+tooltip_text = "1. Level
+"
+mouse_default_cursor_shape = 2
+text = "25m"
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="50m button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 417.0
+offset_top = 366.0
+offset_right = 596.0
+offset_bottom = 409.0
+tooltip_text = "Level nie je hotový"
+mouse_default_cursor_shape = 2
+text = "50m"
+metadata/_edit_use_anchors_ = true
+
+[node name="75m button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 610.0
+offset_top = 312.0
+offset_right = 789.0
+offset_bottom = 355.0
+tooltip_text = "3. Level"
+mouse_default_cursor_shape = 2
+text = "75m"
+metadata/_edit_use_anchors_ = true
+
+[node name="100m button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 611.0
+offset_top = 366.0
+offset_right = 790.0
+offset_bottom = 408.0
+tooltip_text = "Level nie je hotový"
+mouse_default_cursor_shape = 2
+text = "100m"
+metadata/_edit_use_anchors_ = true
+
+[node name="Názov" type="Label" parent="."]
+offset_left = 351.0
+offset_top = 99.0
+offset_right = 882.0
+offset_bottom = 209.0
+text = "Donkey Kong"
+label_settings = SubResource("LabelSettings_mrtjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.00954861
+anchor_right = -0.00954861
+anchor_bottom = 0.0216049
+offset_left = 514.0
+offset_top = 584.0
+offset_right = 693.0
+offset_bottom = 627.0
+tooltip_text = "1. Level
+"
+mouse_default_cursor_shape = 2
+text = "Quit To Desktop
+"
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="25m button" to="." method="_on_25m_button_pressed"]
+[connection signal="pressed" from="50m button" to="." method="_on_50m_button_pressed"]
+[connection signal="pressed" from="75m button" to="." method="_on_75m_button_pressed"]
+[connection signal="pressed" from="100m button" to="." method="_on_100m_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
